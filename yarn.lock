@@ -132,6 +132,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@astrojs/ts-plugin@npm:^1.10.4":
+  version: 1.10.4
+  resolution: "@astrojs/ts-plugin@npm:1.10.4"
+  dependencies:
+    "@astrojs/compiler": "npm:^2.10.3"
+    "@astrojs/yaml2ts": "npm:^0.2.2"
+    "@jridgewell/sourcemap-codec": "npm:^1.4.15"
+    "@volar/language-core": "npm:~2.4.7"
+    "@volar/typescript": "npm:~2.4.7"
+    semver: "npm:^7.3.8"
+    vscode-languageserver-textdocument: "npm:^1.0.11"
+  checksum: 10c0/ec0756aeab265c85c084614009c908abd35c07848e309d82e4e5b65663162b4e1d5b771cf094725d180a7e95e8c0e1fb6424904c1f61129cf9a706abfdb613c8
+  languageName: node
+  linkType: hard
+
 "@astrojs/yaml2ts@npm:^0.2.2":
   version: 0.2.2
   resolution: "@astrojs/yaml2ts@npm:0.2.2"
@@ -1720,7 +1735,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@volar/typescript@npm:2.4.11":
+"@volar/typescript@npm:2.4.11, @volar/typescript@npm:~2.4.7":
   version: 2.4.11
   resolution: "@volar/typescript@npm:2.4.11"
   dependencies:
@@ -2962,6 +2977,7 @@ __metadata:
   resolution: "fronted-challanges@workspace:."
   dependencies:
     "@astrojs/check": "npm:^0.5.6"
+    "@astrojs/ts-plugin": "npm:^1.10.4"
     "@pandacss/dev": "npm:^0.34.2"
     astro: "npm:^4.4.15"
     typescript: "npm:^5.4.2"

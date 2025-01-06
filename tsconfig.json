@@ -3,6 +3,7 @@
   "include":  ["src", "styled-system"],
   "exclude": ["dist"],
   "compilerOptions": {
+    "types": ["@pandacss/dev"],
     "baseUrl": ".",
     "paths": {
       "@styled-system/*": ["styled-system/*"],
