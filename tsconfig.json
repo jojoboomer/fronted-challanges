@@ -1,9 +1,17 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "include":  ["src", "styled-system"],
+  "exclude": ["dist"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@styled-system/*": ["styled-system/*"]
+      "@styled-system/*": ["styled-system/*"],
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"],
+      "@pages/*": ["src/pages/*"],
+      "@styles/*": ["src/styles/*"],
+      "@assets/*": ["src/assets/*"],
+      "@icons/*": ["src/icons/*"]
     }
   }
 }

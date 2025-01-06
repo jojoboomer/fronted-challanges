@@ -1,0 +1,53 @@
+---
+import Clock from "@icons/Clock.astro";
+import Ethereum from "@icons/Ethereum.astro";
+import View from "@icons/View.astro";
+import Layout from "@layouts/Layout.astro";
+import { css } from "@styled-system/css";
+import { card, cardBody, cardFooter, image, layer, main, separator } from "@styles/nft";
+---
+
+<Layout title={"Página de retos"}>
+  <main class={main}>
+    <section class={card}>
+      <div class={css({ position: "relative" })}>
+        <img class={image} src="/nft/image-equilibrium.jpg" alt="" />
+        <div class={layer}><span class={css({zIndex:2})}><View /></span></div>
+      </div>
+      <div class={cardBody}>
+        <a
+          href=""
+          class={css({
+            fontSize: "22px",
+            fontWeight: "bold",
+            color: "white",
+            "&:hover": {
+              color: "primary.nft-cyan",
+            },
+          })}>Equilibrium #3429</a
+        >
+        <p>Our Equilibrium collection promotes balance and calm.</p>
+        <div>
+          <span class="ethereum"><Ethereum />0.041 ETH</span><span
+            ><Clock />3 days left</span
+          >
+        </div>
+      </div>
+      <span class={separator}></span>
+      <div class={cardFooter}>
+        <img class={css({height:'32px'})} src="/nft/image-avatar.png" alt="" />
+        <p>
+          Creation of <a
+            href=""
+            class={css({
+              color: "white",
+              "&:hover": {
+                color: "primary.nft-cyan",
+              },
+            })}>Jules Wyvern</a
+          >
+        </p>
+      </div>
+    </section>
+  </main>
+</Layout>

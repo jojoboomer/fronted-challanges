@@ -1,0 +1,27 @@
+---
+import { css } from "@styled-system/css";
+---
+
+<footer
+      class={css({
+        bottom: 0,
+        width: "100%",
+		display:'flex',
+		justifyContent:'center',
+        backgroundColor: "#000",
+		color:'#fff',
+		'& a':{
+			marginLeft:'2px',
+			color:'#fff',
+			'&:hover':{
+				color:'primary',
+				textDecoration:'underline',
+			}
+		}
+      })}
+    >
+      Challenge by <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank">Frontend Mentor</a
+      >. Coded by <a href="#"> Joel Labrada </a>
+    </footer>

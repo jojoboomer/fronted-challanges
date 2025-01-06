@@ -1,0 +1,57 @@
+---
+import { css } from "@styled-system/css";
+import { square } from "@styled-system/patterns";
+
+interface Props {
+  img: string;
+  title: string;
+  tech: string[];
+  link: string;
+}
+const { img, tech, title, link } = Astro.props;
+
+const cardStyles = square({
+  display: "flex",
+  //   maxWidth: "350px",
+  flexDirection: "column",
+  textAlign: "start",
+  alignItems: "start",
+  border: "3px solid #000",
+  boxShadow: "4px 4px 0px #000",
+  borderRadius: "8px",
+  padding: 6,
+  gap: "8px",
+  "& h4": {
+    fontWeight: "600",
+    fontSize: "24px",
+  },
+  "& div span": {
+    border: "1px solid #000",
+    borderRadius: "4px",
+    paddingX: "4px",
+    paddingY: "2px",
+  },
+});
+---
+
+<div class={cardStyles}>
+  <div class={css({ display: "flex", alignItems: "center", width: "100%" })}>
+    <img
+      class={css({
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        borderRadius: "8px",
+      })}
+      src={img}
+      alt={title}
+    />
+  </div>
+  <h4>{title}</h4>
+  <div class={css({ display: "inline-flex", gap: "8px" })}>
+    {tech.map((tech) => <span class="tech">{tech}</span>)}
+  </div>
+  <div class={css({ width: "100%", display: "flex", justifyContent: "end" })}>
+    <a href=`/${link}`>View</a>
+  </div>
+</div>
