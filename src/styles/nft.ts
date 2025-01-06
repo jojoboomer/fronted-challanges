@@ -22,7 +22,7 @@ export const card = css({
   padding: "1.5rem",
   display: "flex",
   flexDirection: "column",
-  maxWidth: '300px',
+  maxWidth: '320px',
   borderRadius: "10px",
   boxShadow: "rgba(0, 0, 0, 0.35) 0 25px 50px ",
   color: "primary.nft-blue",
