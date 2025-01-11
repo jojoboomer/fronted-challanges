@@ -1,0 +1,17 @@
+---
+import { card, imageContainer } from "@styles/cart";
+import ButtonAdd from "./ButtonAdd.astro";
+
+const { item } = Astro.props;
+---
+<section class:list={[card,'card']}>
+  <div class={imageContainer}>
+    <img src={item.image.desktop} alt={item.name} />
+    <ButtonAdd/>
+  </div>
+  <div class="text-container">
+    <p class="category">{item.category}</p>
+    <p class="name">{item.name}</p>
+    <p data-price={item.price} class="price">${item.price.toFixed(2)}</p>
+  </div>
+</section>

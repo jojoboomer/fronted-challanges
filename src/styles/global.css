@@ -1,2 +1,74 @@
 @layer reset, base, tokens, recipes, utilities;
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap'); */
+@font-face {
+  font-family: "RedHat";
+  font-weight: 500, 600, 800, 900;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/RedHat/RedHatText-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "Lato";
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Lato/Lato-Light.ttf");
+}
+@font-face {
+  font-family: "Lato";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Lato/Lato-Regular.ttf");
+}
+@font-face {
+  font-family: "Lato";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Lato/Lato-Bold.ttf");
+}
+@font-face {
+  font-family: "Lato";
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Lato/Lato-Black.ttf");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Poppins/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Poppins/Poppins-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Poppins";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Poppins/Poppins-Bold.ttf");
+}
+
+:root {
+  --red-hat: "RedHat", serif;
+  --lato: "Lato", serif;
+  --poppins: "Poppins", serif;
+  --cart-bg: hsl(20, 50%, 98%);
+  --cart-red: hsl(14, 86%, 42%);
+}

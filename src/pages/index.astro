@@ -1,68 +1,141 @@
 ---
 import Card from "@components/Card.astro";
+import Github from "@icons/Github.astro";
+import Linkedin from "@icons/Linkedin.astro";
 import Layout from "@layouts/Layout.astro";
 import { css } from "@styled-system/css";
-import { grid } from "@styled-system/patterns";
+import { flex, grid } from "@styled-system/patterns";
 
 const solutions = [
   {
     title: "NFT Card Component",
+    level: "newbie",
     img: "/nft/image-equilibrium.jpg",
     tech: ["HTML", "CSS"],
     link: "./nft-card",
+    description:'Simple component using ASTRO + PandaCSS'
+  },
+  {
+    title: "Product list with cart",
+    level: "newbie",
+    img: "/cart/preview.jpg",
+    tech: ["HTML", "CSS", "JavaScript"],
+    link: "./shoping-cart",
+    description:'A product page with cart using ASTRO + PandaCSS. Focus on the cart functionality using vanilla JS'
+  },
+  {
+    title: "Sign-up form component",
+    level: "junior",
+    img: "/singup-component/preview.jpg",
+    tech: ["HTML", "CSS", "JavaScript"],
+    link: "./singup-component",
+    description:'Simple component using ASTRO + PandaCSS'
   },
 ];
+
+const main = css({
+  minHeight: "100vh",
+  position: "relative",
+  bg: "gray.900",
+  fontFamily: "Lato",
+  opacity: 1,
+});
 ---
 
 <Layout title={"Página de retos"}>
-  <main
-    class={css({
-      minHeight: "100vh",
-      padding: "4",
-      position: "relative",
-      width: "80%",
-      margin: "0 auto",
-    })}
-  >
-    <header class={css({ marginBottom: "8" })}>
-      <h1
-        class={css({ fontSize: "6xl", fontWeight: "bold", color: "primary" })}
-      >
-        Frontend Mentor Solutions
-      </h1>
-
-    </header>
-    <section
-      class={grid({
-        columns: {
-          sm: 1,
-          md: 2,
-          lg: 2,
-          xl: 3,
-        },
-        gap: "4",
+  <main class={main}>
+    <div
+      class={css({
+        padding: "4",
+        width: "80%",
+        margin: "0 auto",
       })}
     >
-      {
-        solutions.map((solution) => (
-          <Card
-            title={solution.title}
-            img={solution.img}
-            tech={solution.tech}
-            link={solution.link}
-          />
-        ))
-      }
-    </section>
-
-    <!-- <h1></h1> -->
-
-    <span class="attribution"
-      >Challenges by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
-        Frontend Mentor
-      </a>
-    </span>
+      <header
+        class={flex({
+          marginBottom: "8",
+          w: "full",
+          alignItems: "center",
+          textAlign: {
+            base: "center",
+            md: "left",
+          },
+          gap: "8",
+          flexDirection: {
+            base: "column",
+            md: "row",
+          },
+        })}
+      >
+        <h1
+          class={css({
+            fontSize: "6xl",
+            fontWeight: "bold",
+            color: "white",
+            flex: "1",
+          })}
+        >
+          Frontend Mentor Solutions
+        </h1>
+        <div
+          class={flex({
+            gap: "4",
+            px: "4",
+            py: "2",
+            borderRadius: "8px",
+            bg: "rgba(255,255,255,0.8)",
+            backdropFilter: "blur(11px)",
+            border: "1px solid rgba(255,255,255,0.25)",
+          })}
+        >
+          <a
+            target="_blank"
+            href="https://github.com/jojoboomer"
+            class={css({
+              transition: "0.2s ease-in-out",
+              _hover: { scale: "1.2" },
+            })}><Github /></a
+          >
+          <a
+            target="_blank"
+            href="https://linkedin.com/in/joellabrada/"
+            class={css({
+              transition: "0.2s ease-in-out",
+              _hover: { scale: "1.2" },
+            })}><Linkedin /></a
+          >
+        </div>
+      </header>
+      <section
+        class={grid({
+          columns: {
+            sm: 1,
+            md: 3,
+            lg: 3,
+            xl: 3,
+          },
+          gap: "4",
+        })}
+      >
+        {
+          solutions.map((solution) => (
+            <Card
+              title={solution.title}
+              img={solution.img}
+              tech={solution.tech}
+              link={solution.link}
+              description={solution.description}
+            />
+          ))
+        }
+      </section>
+      <span class="attribution"
+        >Challenges by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          Frontend Mentor
+        </a>
+      </span>
+    </div>
   </main>
 </Layout>
 
