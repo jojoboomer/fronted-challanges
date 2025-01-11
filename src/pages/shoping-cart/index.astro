@@ -53,6 +53,7 @@ import datajson from "./shop-data.json";
       name: string;
       cant: number;
       price: number;
+      img: string;
     }
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -113,6 +114,8 @@ import datajson from "./shop-data.json";
 
         const cant = 1;
         const name = card.querySelector(".name")?.textContent || "";
+        const img = card.querySelector("img")?.src;
+        console.log(img)
         const price = Number.parseFloat(
           (card.querySelector(".price") as HTMLElement)?.dataset.price || "0"
         );
@@ -137,7 +140,7 @@ import datajson from "./shop-data.json";
             if (indexFound !== -1) {
               cart[indexFound].cant = cart[indexFound].cant + 1;
             } else {
-              cart.push({ name, cant, price });
+              cart.push({ name, cant, price,img });
             }
 
             renderCart();

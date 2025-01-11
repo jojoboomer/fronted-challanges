@@ -105,13 +105,13 @@ export const renderModal = (cart, totalPrice) => {
     list.innerHTML = "";
 
     cart.forEach((product) => {
-      const { name, cant, price } = product;
+      const { name, cant, price, img } = product;
       const total = cant * price;
 
       const li = document.createElement("li");
       li.classList.add("item-cart-final");
       li.innerHTML = `
-      <img src="/cart/image-baklava-desktop.jpg" alt="" />
+      <img src="${img}" alt="" />
         <div class="data">
           <h5>${name}</h5>
           <strong style="color:var(--cart-red)">${cant}x</strong> 
