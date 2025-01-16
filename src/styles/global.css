@@ -7,6 +7,14 @@
   font-display: swap;
   src: url("/fonts/RedHat/RedHatText-VariableFont_wght.ttf");
 }
+
+@font-face {
+  font-family: "Josefin";
+  font-weight: 400, 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf");
+}
 @font-face {
   font-family: "Lato";
   font-weight: 300;
@@ -69,6 +77,8 @@
   --red-hat: "RedHat", serif;
   --lato: "Lato", serif;
   --poppins: "Poppins", serif;
+  --josefin: "Josefin", serif;
   --cart-bg: hsl(20, 50%, 98%);
   --cart-red: hsl(14, 86%, 42%);
+  --todo-secondary: #4d5066;
 }

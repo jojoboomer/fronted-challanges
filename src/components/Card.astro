@@ -7,8 +7,9 @@ interface Props {
   tech: string[];
   link: string;
   description: string;
+  status: boolean;
 }
-const { img, tech, title, link, description } = Astro.props;
+const { img, tech, title, link, description, status } = Astro.props;
 
 const cardStyles = css({
   bg: "white",
@@ -43,7 +44,7 @@ const cardBody = css({
 });
 ---
 
-<a href=`/${link}`>
+<a href={status ? `/${link}` : ''}>
   <div class={cardStyles}>
     <img
       class={css({

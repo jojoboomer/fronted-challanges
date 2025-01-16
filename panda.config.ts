@@ -9,7 +9,10 @@ export default defineConfig({
   ],
   exclude: [],
   outdir: "styled-system",
-
+  conditions: {
+    light: "[data-color-mode=light] &",
+    dark: "[data-color-mode=dark] &",
+  },
   theme: {
     extend: {
       breakpoints: {
@@ -21,6 +24,7 @@ export default defineConfig({
           RedHat: { value: "var(--red-hat), sans-serif" },
           Lato: { value: "var(--lato), sans-serif" },
           Poppins: { value: "var(--poppins), sans-serif" },
+          Josefin: { value: "var(--josefin), sans-serif" },
         },
         colors: {
           primary: {
@@ -35,6 +39,7 @@ export default defineConfig({
             "rose-400": { value: "hsl(7, 20%, 60%)" },
             "rose-500": { value: "hsl(12, 20%, 44%)" },
             "rose-900": { value: "hsl(14, 65%, 9%)" },
+            todo: { value: "#3a7bfd" },
           },
           secondary: {
             DEFAULT: { value: "#ff4081" },
@@ -50,6 +55,48 @@ export default defineConfig({
             "nft-800": { value: "hsl(217, 54%, 11%)" },
             "singup-dark-blue": { value: "hsl(246, 25%, 77%)" },
             "singup-grayish-blue": { value: "hsl(249, 10%, 26%)" },
+          },
+          text: {
+            todo: { value: "#484b6a" },
+          },
+        },
+      },
+      semanticTokens: {
+        colors: {
+          primary: {
+            todo: { value: "#3a7bfd" },
+          },
+          neutral: {
+            todolist: {
+              value: {
+                _light: "#ffffff",
+                _dark: "hsl(235, 24%, 19%)",
+              },
+            },
+          },
+          background: {
+            todo: {
+              value: {
+                _light: "#fafafa",
+                _dark: "#161722",
+              },
+            },
+          },
+          text: {
+            todo: {
+              primary: {
+                value: {
+                  _light: "#484b6a",
+                  _dark: "#cacde8",
+                },
+              },
+              secondary: {
+                value: {
+                  _light: "#9394a5",
+                  _dark: "var(--todo-secondary)",
+                }
+              },
+            },
           },
         },
       },

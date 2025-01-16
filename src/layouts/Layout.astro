@@ -1,6 +1,26 @@
 ---
+import { css } from "@styled-system/css";
 import "../styles/global.css";
 const { title } = Astro.props;
+
+const back = css({
+  position: "absolute",
+  w: "auto",
+  aspectRatio: "1/1",
+  borderRadius: "50%",
+  bg: "primary.rose-50",
+  bottom: "1rem",
+  right: "1rem",
+  color: "white",
+  zIndex: "50",
+  transition: "0.2s ease-in-out",
+  cursor: "pointer",
+  _hover: {
+    scale: "1.2",
+  },
+});
+
+// const dir = Astro.url.pathname;
 ---
 
 <html lang="es">
@@ -9,10 +29,28 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet"> -->
     <title>{title}</title>
   </head>
   <body>
     <slot />
+    <a class={back}
+    >
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 512 512"
+      xmlns="http://www.w3.org/2000/svg"
+      ><title>ionicons-v5-a</title><polyline
+        points="244 400 100 256 244 112"
+        style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px"
+      ></polyline><line
+        x1="120"
+        y1="256"
+        x2="412"
+        y2="256"
+        style="fill:none;stroke:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:48px"
+      ></line></svg
+    ></a
+  >
   </body>
 </html>

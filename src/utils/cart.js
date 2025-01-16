@@ -1,3 +1,5 @@
+import renderCart from '@pages/shoping-cart/index.astro';
+
 export const getTotal = (cart) => {
   let total = 0;
   cart.forEach((item) => {
@@ -68,49 +70,59 @@ export const getEmptyCart = () => {
   return li;
 };
 
-export const getFullCart = (product) => {
-  const { name, cant, price } = product;
-  const total = cant * price;
+export const getFullCart = (cart,cartElement) => {
+  cart.forEach((product) => {
+    const { name, cant, price } = product;
+    const total = cant * price;
 
-  const li = document.createElement("li");
-  li.classList.add("item-cart");
-  li.innerHTML = `
-          <div class="item-info">
-            <h5>${name}</h5>
+    const li = document.createElement("li");
+    li.classList.add("item-cart");
+    li.innerHTML = `
+            <div class="item-info">
+              <h5>${name}</h5>
+              <div>
+                  <strong style="color:var(--cart-red)">${cant}x</strong> 
+                  <span style="margin-left:8px">@ $${price.toFixed(2)}</span>
+                  <strong style="margin-left:8px">$${total.toFixed(2)}</strong>
+              </div>
+            </div>  
             <div>
-                <strong style="color:var(--cart-red)">${cant}x</strong> 
-                <span style="margin-left:8px">@ $${price.toFixed(2)}</span>
-                <strong style="margin-left:8px">$${total.toFixed(2)}</strong>
+              <button class="btn-remove" >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  height="10"
+                  viewBox="0 0 10 10"
+                  fill="#CAAFA7"
+                  ><path
+                    d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"
+                  ></path></svg
+                >
+              </button>
             </div>
-          </div>  
-          <div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="10"
-              height="10"
-              fill="none"
-              viewBox="0 0 10 10"
-              ><path
-                fill="#CAAFA7"
-                d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"
-              ></path></svg
-            >
-          </div>
-        `;
-  return li;
+          `;
+
+    li.querySelector(".btn-remove")?.addEventListener("click", () => {
+      const indexFound = cart.findIndex((element) => element.name == name);
+      cart.splice(indexFound, 1);
+      renderCart();
+    });
+    cartElement?.appendChild(li);
+  });
+
 };
 
 export const renderModal = (cart, totalPrice) => {
-    const list = document.querySelector(".list-confirmation");
-    list.innerHTML = "";
+  const list = document.querySelector(".list-confirmation");
+  list.innerHTML = "";
 
-    cart.forEach((product) => {
-      const { name, cant, price, img } = product;
-      const total = cant * price;
+  cart.forEach((product) => {
+    const { name, cant, price, img } = product;
+    const total = cant * price;
 
-      const li = document.createElement("li");
-      li.classList.add("item-cart-final");
-      li.innerHTML = `
+    const li = document.createElement("li");
+    li.classList.add("item-cart-final");
+    li.innerHTML = `
       <img src="${img}" alt="" />
         <div class="data">
           <h5>${name}</h5>
@@ -122,12 +134,12 @@ export const renderModal = (cart, totalPrice) => {
         <strong style="margin-left:8px">$${total.toFixed(2)}</strong>
       </div>
     `;
-      list?.appendChild(li);
-    });
-    const li = document.createElement("li");
-    li.classList.add("item-cart-final");
-    li.innerHTML = `
+    list?.appendChild(li);
+  });
+  const li = document.createElement("li");
+  li.classList.add("item-cart-final");
+  li.innerHTML = `
       <div class='total-order-list'><span>Order Total</span> <span class="total">$${totalPrice}</span></div>
     `;
-    list?.appendChild(li);
-  };
+  list?.appendChild(li);
+};

@@ -13,7 +13,8 @@ const solutions = [
     img: "/nft/image-equilibrium.jpg",
     tech: ["HTML", "CSS"],
     link: "./nft-card",
-    description:'Simple component using ASTRO + PandaCSS'
+    description: "Simple component using ASTRO + PandaCSS",
+    active: true,
   },
   {
     title: "Product list with cart",
@@ -21,7 +22,9 @@ const solutions = [
     img: "/cart/preview.jpg",
     tech: ["HTML", "CSS", "JavaScript"],
     link: "./shoping-cart",
-    description:'A product page with cart using ASTRO + PandaCSS. Focus on the cart functionality using vanilla JS'
+    description:
+      "A product page with cart using ASTRO + PandaCSS. Focus on the cart functionality using vanilla JS",
+    active: false,
   },
   {
     title: "Sign-up form component",
@@ -29,7 +32,18 @@ const solutions = [
     img: "/singup-component/preview.jpg",
     tech: ["HTML", "CSS", "JavaScript"],
     link: "./singup-component",
-    description:'Simple component using ASTRO + PandaCSS'
+    description: "Simple component using ASTRO + PandaCSS",
+    active: true,
+  },
+  {
+    title: "Todo app",
+    level: "intermediate",
+    img: "/todo/desktop-preview.jpg",
+    tech: ["HTML", "CSS", "React"],
+    link: "./todo",
+    description:
+      "The classic todo app with a few twists! This app includes a dark/light theme toggle and drag & drop reordering for anyone wanting an extra test.",
+    active: true,
   },
 ];
 
@@ -125,6 +139,7 @@ const main = css({
               tech={solution.tech}
               link={solution.link}
               description={solution.description}
+              status={solution.active}
             />
           ))
         }
@@ -141,7 +156,7 @@ const main = css({
 
 <style>
   .attribution {
-    color: white; 
+    color: white;
     position: absolute;
     bottom: 0;
     left: 0;

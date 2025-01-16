@@ -3,6 +3,8 @@
   "include":  ["src", "styled-system"],
   "exclude": ["dist"],
   "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
     "types": ["@pandacss/dev"],
     "baseUrl": ".",
     "paths": {

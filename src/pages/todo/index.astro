@@ -1,0 +1,18 @@
+---
+import { TaskList } from "@components/pages/todo/TaskList";
+import { ThemeToggle } from "@components/pages/todo/ThemeToggle";
+import Layout from "@layouts/Layout.astro";
+import { footer, header, listWrapper, main } from "@styles/todo";
+
+---
+
+<Layout title={"Todo App"}>
+  <main class={main}>
+    <div class:list={[listWrapper]}>
+      <header class={header}><h2>Todo</h2><ThemeToggle client:only="react"/></header>
+      <TaskList client:only="react" />
+      <footer class={footer}><p>Drag and drop to reorder list</p></footer>
+    </div>
+  </main>
+</Layout>
+
