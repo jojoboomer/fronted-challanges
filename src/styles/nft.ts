@@ -4,7 +4,7 @@ import { flex, square } from "@styled-system/patterns";
 export const main = flex({
   position: "relative",
   fontSize:'18px',
-  bg: "neutral.nft-800",
+  bg: "background.nft",
   minHeight: "100vh",
   flexDir: "column",
   alignItems: "center",
@@ -16,7 +16,7 @@ export const main = flex({
 });
 
 export const card = css({
-  bg: "neutral.nft-500",
+  bg: "background.nftCard",
   height: "90%",
   w: "auto",
   padding: "1.5rem",
@@ -25,7 +25,7 @@ export const card = css({
   maxWidth: '320px',
   borderRadius: "10px",
   boxShadow: "rgba(0, 0, 0, 0.35) 0 25px 50px ",
-  color: "primary.nft-blue",
+  color: "text.nft.primary",
 });
 
 export const image = square({
@@ -57,7 +57,7 @@ export const cardBody = flex({
       alignItems: "center",
     },
     "& span.ethereum": {
-      color: "primary.nft-cyan",
+      color: "text.nft.secondary",
     },
   },
 });
@@ -68,7 +68,7 @@ export const layer = css({
   left: 0,
   w: "full",
   h: "full",
-  bg: "primary.nft-cyan/30",
+  bg: "text.nft.secondary/30",
   borderRadius: "8px",
   display: "flex",
   alignItems: "center",
@@ -89,6 +89,6 @@ export const cardFooter = css({
   "& img": {
     border: "solid 1px ",
     borderRadius: "full",
-    borderColor: "primary.cyan",
+    borderColor: "text.nft.secondary",
   },
 });

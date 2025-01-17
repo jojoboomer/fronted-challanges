@@ -3,7 +3,7 @@ import { grid } from "@styled-system/patterns";
 
 export const main = grid({
   fontFamily: "RedHat",
-  bg: "primary.rose-50",
+  bg: "background.cart",
   display: "grid",
   padding: {
     base: "2rem",

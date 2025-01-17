@@ -18,7 +18,7 @@ export default defineConfig({
       breakpoints: {
         xs: "375px",
       },
-      tokens: {
+      semanticTokens: {
         fonts: {
           Outfit: { value: "Outfit, sans-serif" },
           RedHat: { value: "var(--red-hat), sans-serif" },
@@ -29,45 +29,20 @@ export default defineConfig({
         colors: {
           primary: {
             DEFAULT: { value: "#0070f3" },
-            "nft-cyan": { value: "hsl(178, 100%, 50%)" },
-            "nft-blue": { value: "hsl(215, 51%, 70%)" },
-            "singup-red": { value: "#ff7a7a" },
-            "singup-green": { value: "hsl(154, 59.20%, 51.00%)" },
-            "rose-50": { value: "var(--cart-bg)" },
-            "rose-100": { value: "hsl(13, 31%, 94%)" },
-            "rose-300": { value: "hsl(14, 25%, 72%)" },
-            "rose-400": { value: "hsl(7, 20%, 60%)" },
-            "rose-500": { value: "hsl(12, 20%, 44%)" },
-            "rose-900": { value: "hsl(14, 65%, 9%)" },
             todo: { value: "#3a7bfd" },
+            singup: { value: "#ff7a7a" },
           },
           secondary: {
             DEFAULT: { value: "#ff4081" },
+            singup: { value: "hsl(154, 59.20%, 51.00%)" },
           },
           accent: {
-            "red-cart": { value: "var(--cart-red)" },
-            "singup-blue": { value: "hsl(248, 32%, 49%)" },
+            singup: { value: "hsl(248, 32%, 49%)" },
           },
           neutral: {
             DEFAULT: { value: "#333" },
-            "nft-300": { value: "hsl(215, 32%, 27%)" },
-            "nft-500": { value: "hsl(216, 50%, 16%)" },
-            "nft-800": { value: "hsl(217, 54%, 11%)" },
-            "singup-dark-blue": { value: "hsl(246, 25%, 77%)" },
-            "singup-grayish-blue": { value: "hsl(249, 10%, 26%)" },
-          },
-          text: {
-            todo: { value: "#484b6a" },
-          },
-        },
-      },
-      semanticTokens: {
-        colors: {
-          primary: {
-            todo: { value: "#3a7bfd" },
-          },
-          neutral: {
-            todolist: {
+            singup: { value: "hsl(246, 25%, 77%)" },
+            todo: {
               value: {
                 _light: "#ffffff",
                 _dark: "hsl(235, 24%, 19%)",
@@ -81,6 +56,9 @@ export default defineConfig({
                 _dark: "#161722",
               },
             },
+            nft: { value: "#0d192b" },
+            nftCard: { value: "#14253d" },
+            singup: { value: "#ff7a7a" },
           },
           text: {
             todo: {
@@ -94,8 +72,12 @@ export default defineConfig({
                 value: {
                   _light: "#9394a5",
                   _dark: "var(--todo-secondary)",
-                }
+                },
               },
+            },
+            nft: {
+              primary: { value: "hsl(215, 51%, 70%)" },
+              secondary: { value: "hsl(178, 100%, 50%)" },
             },
           },
         },
@@ -108,8 +90,7 @@ export default defineConfig({
       fontFamily: "body",
       margin: 0,
       padding: 0,
-      backgroundColor: "cian.400",
-      "box-sizing": "border-box",
+      boxSizing: "border-box",
     },
   },
 });

@@ -84,7 +84,7 @@ export const task = css({
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
-  bg: "neutral.todolist",
+  bg: "neutral.todo",
   '& input[type="checkbox"]': {
     cursor: "pointer",
     display: "none",
@@ -172,7 +172,7 @@ export const listFooter = css({
   px: "1rem",
   gap: "1rem",
   color: "text.todo.secondary",
-  bgColor: "neutral.todolist",
+  bgColor: "neutral.todo",
   "& .filter": {
     display: "flex",
     gap: "0.5rem",

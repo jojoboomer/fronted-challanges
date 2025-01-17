@@ -2,7 +2,7 @@ import { css } from "@styled-system/css";
 import { flex } from "@styled-system/patterns";
 
 export const main = flex({
-  bg: "primary.singup-red",
+  bg: "background.singup",
   minH: "100vh",
   bgImage: 'url("/singup-component/bg-intro-desktop.png")',
   p: {
@@ -73,7 +73,7 @@ export const sectionSingUp = css({
       border: "1px solid #e5e5e5",
       borderRadius: "5px",
       _focusVisible: {
-        outlineColor: "accent.singup-blue",
+        outlineColor: "accent.singup",
       },
     },
     "& input.error": {
@@ -82,15 +82,16 @@ export const sectionSingUp = css({
     "& .terms": {
       fontSize: "0.65rem",
       fontWeight: "400",
-      color: "neutral.singup-dark-blue",
-      "& strong": {
-        color: "primary.singup-red",
+      color: "neutral.singup",
+      "& a": {
+        fontWeight: 'bolder',
+        color: "primary.singup",
       },
     },
     "& button": {
       width: "100%",
       borderRadius: "10px",
-      bg: "primary.singup-green",
+      bg: "secondary.singup",
       color: "white",
       py: "1rem",
       cursor: "pointer",
@@ -108,7 +109,7 @@ export const sectionSingUp = css({
     color: "white",
     width: "100%",
     borderRadius: "10px",
-    bg: "accent.singup-blue",
+    bg: "accent.singup",
     shadow: "0 4.5px 0px 0px rgba(10, 10, 10, 0.2)",
   },
 });
