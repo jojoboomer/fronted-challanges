@@ -16,6 +16,7 @@
       "@assets/*": ["src/assets/*"],
       "@icons/*": ["src/icons/*"],
       "@data/*": ["src/data/*"],
+      "@constants": ["src/constants.ts"],
       "@utils/*": ["src/utils/*"]
     }
   }

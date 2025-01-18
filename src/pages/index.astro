@@ -4,135 +4,27 @@ import Github from "@icons/Github.astro";
 import Linkedin from "@icons/Linkedin.astro";
 import Layout from "@layouts/Layout.astro";
 import { css } from "@styled-system/css";
-import { flex, grid } from "@styled-system/patterns";
+import { attribution, header, listProyects, main, social, wrapperMain } from "@styles/index";
+import { PROJECTS } from "src/constants";
+--- 
 
-const solutions = [
-  {
-    title: "NFT Card Component",
-    level: "newbie",
-    img: "/nft/image-equilibrium.jpg",
-    tech: ["HTML", "CSS"],
-    link: "./nft-card",
-    description: "Simple component using ASTRO + PandaCSS",
-    active: true,
-  },
-  {
-    title: "Product list with cart",
-    level: "newbie",
-    img: "/cart/preview.jpg",
-    tech: ["HTML", "CSS", "JavaScript"],
-    link: "./shoping-cart",
-    description:
-      "A product page with cart using ASTRO + PandaCSS. Focus on the cart functionality using vanilla JS",
-    active: false,
-  },
-  {
-    title: "Sign-up form component",
-    level: "junior",
-    img: "/singup-component/preview.jpg",
-    tech: ["HTML", "CSS", "JavaScript"],
-    link: "./singup-component",
-    description: "Simple component using ASTRO + PandaCSS",
-    active: true,
-  },
-  {
-    title: "Todo app",
-    level: "intermediate",
-    img: "/todo/desktop-preview.jpg",
-    tech: ["HTML", "CSS", "React"],
-    link: "./todo",
-    description:
-      "The classic todo app with a few twists! This app includes a dark/light theme toggle and drag & drop reordering for anyone wanting an extra test.",
-    active: true,
-  },
-];
-
-const main = css({
-  minHeight: "100vh",
-  position: "relative",
-  bg: "gray.900",
-  fontFamily: "Lato",
-  opacity: 1,
-});
----
-
-<Layout title={"Página de retos"}>
+<Layout title={"Fronted Challanges"}>
   <main class={main}>
-    <div
-      class={css({
-        padding: "4",
-        width: "80%",
-        margin: "0 auto",
-      })}
-    >
-      <header
-        class={flex({
-          marginBottom: "8",
-          w: "full",
-          alignItems: "center",
-          textAlign: {
-            base: "center",
-            md: "left",
-          },
-          gap: "8",
-          flexDirection: {
-            base: "column",
-            md: "row",
-          },
-        })}
-      >
-        <h1
-          class={css({
-            fontSize: "6xl",
-            fontWeight: "bold",
-            color: "white",
-            flex: "1",
-          })}
-        >
-          Frontend Mentor Solutions
-        </h1>
-        <div
-          class={flex({
-            gap: "4",
-            px: "4",
-            py: "2",
-            borderRadius: "8px",
-            bg: "rgba(255,255,255,0.8)",
-            backdropFilter: "blur(11px)",
-            border: "1px solid rgba(255,255,255,0.25)",
-          })}
-        >
-          <a
-            target="_blank"
-            href="https://github.com/jojoboomer"
-            class={css({
-              transition: "0.2s ease-in-out",
-              _hover: { scale: "1.2" },
-            })}><Github /></a
-          >
-          <a
-            target="_blank"
-            href="https://linkedin.com/in/joellabrada/"
-            class={css({
-              transition: "0.2s ease-in-out",
-              _hover: { scale: "1.2" },
-            })}><Linkedin /></a
-          >
+    <div class={wrapperMain}>
+      <header class={header}>
+        <h1>Frontend Mentor Solutions</h1>
+        <div class={social}>
+          <a target="_blank" href={`https://github.com/jojoboomer`}>
+            <Github/>
+          </a>
+          <a target="_blank" href={`https://linkedin.com/in/joellabrada/`}>
+            <Linkedin/>
+          </a>
         </div>
       </header>
-      <section
-        class={grid({
-          columns: {
-            sm: 1,
-            md: 3,
-            lg: 3,
-            xl: 3,
-          },
-          gap: "4",
-        })}
-      >
+      <section class={listProyects}>
         {
-          solutions.map((solution) => (
+          PROJECTS.map((solution) => (
             <Card
               title={solution.title}
               img={solution.img}
@@ -140,30 +32,17 @@ const main = css({
               link={solution.link}
               description={solution.description}
               status={solution.active}
+              level={solution.level}
             />
           ))
         }
       </section>
-      <span class="attribution"
-        >Challenges by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
-          Frontend Mentor
+      <div class={attribution}>
+        Challenges by Frontend Mentor:
+        <a class={css({marginLeft:'0.5rem'})} href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+          <img class={css({w:'28px',h:'28px', _hover:{scale:'1.1'}})} src="/favicon-32x32.png" alt="Fonted Mentor Icon">
         </a>
-      </span>
+      </div>
     </div>
   </main>
 </Layout>
-
-<style>
-  .attribution {
-    color: white;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-    width: 100%;
-    a {
-      color: tomato;
-    }
-  }
-</style>

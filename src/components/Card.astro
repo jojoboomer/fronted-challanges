@@ -2,26 +2,56 @@
 import { css } from "@styled-system/css";
 
 interface Props {
-  img: string;
+  img?: string;
   title: string;
-  tech: string[];
-  link: string;
-  description: string;
+  tech?: {
+  name: string;
+  color: string;
+}[];
+  link?: string;
+  description?: string;
   status: boolean;
+  level?: string;
 }
-const { img, tech, title, link, description, status } = Astro.props;
+const { img, tech, title, link, description, status, level } = Astro.props;
 
 const cardStyles = css({
   bg: "white",
   display: "flex",
   flexDirection: "column",
-  padding: 2,
+  padding: '16px',
   gap: "8px",
   boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px",
   transition: "0.4s",
   borderRadius: "8px",
-  _hover: {
-    translate: "0 -10px",
+});
+
+const cardImg = css({
+  position: "relative",
+  aspectRatio: "landscape",
+  width: "100%",
+  overflow: "hidden",
+  borderRadius: "8px",
+  "& .level": {
+    position: "absolute",
+    top: "1rem",
+    right: "1rem",
+    textTransform: "uppercase",
+    fontWeight: "600",
+    bg: "rgba(100,100,200,0.8)",
+    py: "0.2rem",
+    px: "0.4rem",
+    borderRadius: "5px",
+    zIndex:10
+  },  
+  "& img": {
+    borderRadius: "8px",
+    objectFit: "cover",
+    bgPosition: "center",
+    transition: "all ease 0.3s",
+    _hover: {
+      scale: "1.1",
+    },
   },
 });
 
@@ -29,41 +59,37 @@ const cardBody = css({
   display: "flex",
   flexDirection: "column",
   gap: "8px",
+  fontSize:'1rem',
   "& h3": {
     fontWeight: "600",
-    fontSize: "28px",
+    fontSize: "1.5rem",
+    w:'max',
+  _hover: {
+      textDecoration:'underline'
+  },
   },
   "& .tech": {
     fontWeight: "500",
     fontSize: "16px",
     borderRadius: "25px",
     paddingX: "8px",
-    bg: "gray.300",
-    
   },
 });
 ---
 
-<a href={status ? `/${link}` : ''}>
-  <div class={cardStyles}>
-    <img
-      class={css({
-        aspectRatio: "landscape",
-        width: "100%",
-        objectFit: "cover",
-        bgPosition:'center',
-        borderRadius: "8px",
-      })}
-      loading="lazy"
-      src={img}
-      alt={title}
-    />
-    <div class={cardBody}>
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <div class={css({ display: "inline-flex", gap: "8px" })}>
-        {tech.map((tech) => <span class="tech">{tech}</span>)}
-      </div>
-    </div>
+<div class={cardStyles}>
+  <div class={cardImg}>
+    <span class="level">{level}</span>
+    <a href={status ? `/${link}` : ""}>
+      <img loading="lazy" src={img} alt={title} />
+    </a>
   </div>
-</a>
+
+  <div class={cardBody}>
+    <h3><a href={status ? `/${link}` : ""}>{title}</a></h3>
+    <div class={css({ display: "inline-flex", gap: "8px" })}>
+      {tech?.map((tech) => <span class="tech" style={{backgroundColor:tech.bg, color:tech.color}}>{tech.name}</span>)}
+    </div>
+    <p>{description}</p>
+  </div>
+</div>
