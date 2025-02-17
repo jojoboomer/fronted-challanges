@@ -30,7 +30,7 @@ export const main = grid({
 });
 
 export const cart = css({
-  padding: "1rem",
+  padding: "1.5rem",
   bg: "white",
   height: 'fit',
   '& .separator': {

@@ -6,7 +6,7 @@ import Modal from "./Modal";
 
 const EmptyCart = () => {
   return (
-    <>
+    <div className={css({ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "center", width: "100%", height: "100%" })}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="128"
@@ -63,7 +63,7 @@ const EmptyCart = () => {
         ></path>
       </svg>
       <p>Your added items will appear here</p>
-    </>
+    </div>
   );
 };
 
