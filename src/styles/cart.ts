@@ -129,11 +129,14 @@ export const card = css({
 
   "& .text-container": {
     "& .category": {
-      color: "primary.rose-400",
+      color: "#ad8985",
     },
-    "& .name": {},
+    "& .name": {
+      fontWeight:'medium'
+    },
     "& .price": {
-      color: "accent.red-cart",
+      color: "primary.cart",
+      fontWeight:'medium'
     },
   },
 });
