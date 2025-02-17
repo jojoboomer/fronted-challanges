@@ -31,6 +31,7 @@ export default defineConfig({
             DEFAULT: { value: "#0070f3" },
             todo: { value: "#3a7bfd" },
             singup: { value: "#ff7a7a" },
+            cart: { value: "#c73a0f" },
           },
           secondary: {
             DEFAULT: { value: "#ff4081" },
@@ -59,8 +60,10 @@ export default defineConfig({
             nft: { value: "#0d192b" },
             nftCard: { value: "#14253d" },
             singup: { value: "#ff7a7a" },
+            cart: { value: "#fcf9f7" }
           },
           text: {
+            cart: { value: "#260f08" },
             todo: {
               primary: {
                 value: {

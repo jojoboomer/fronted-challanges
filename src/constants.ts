@@ -47,7 +47,7 @@ export const PROJECTS: Project[] = [
     link: "./shoping-cart",
     description:
       "A product page with cart using ASTRO + PandaCSS. Focus on the cart functionality using vanilla JS",
-    active: false,
+    active: true,
   },
   {
     title: "Sign-up form component",
