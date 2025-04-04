@@ -68,4 +68,21 @@ export const PROJECTS: Project[] = [
       "The classic todo app with a few twists! This app includes a dark/light theme toggle and drag & drop reordering for anyone wanting an extra test.",
     active: true,
   },
+  {
+    title: "IP Address Tracker",
+    level: "intermediate",
+    img: "/tracker/desktop-preview.jpg",
+    tech: [Tech.astro, Tech.panda, Tech.react],
+    link: "./ip-tracker",
+    description:
+      "In this challenge, I'll be using two separate APIs together to create an IP Address Tracking app.",
+    active: true,
+  },
 ];
+
+export const IP_API_URL = "https://geo.ipify.org/api/v2/"
+// apiKey
+// ipAddress
+// domain
+// email
+// escapedUnicode

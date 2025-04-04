@@ -9,6 +9,14 @@
 }
 
 @font-face {
+  font-family: "Rubik";
+  font-weight: 400, 500, 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/Rubik/Rubik-VariableFont_wght.ttf");
+}
+
+@font-face {
   font-family: "Josefin";
   font-weight: 400, 700;
   font-style: normal;
@@ -76,6 +84,7 @@
 :root {
   --red-hat: "RedHat", serif;
   --lato: "Lato", serif;
+  --rubik: "Rubik", serif;
   --poppins: "Poppins", serif;
   --josefin: "Josefin", serif;
   --cart-bg: hsl(20, 50%, 98%);

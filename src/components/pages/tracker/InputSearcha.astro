@@ -1,0 +1,40 @@
+---
+// src/components/SearchInput.tsx
+import { css } from "styled-system/css";
+import { flex } from "styled-system/patterns";
+---
+
+<div class={flex({ alignItems: "center", justify: "center", p: "5" })}>
+  <div class={flex()}>
+    <input
+      type="text"
+      class={css({
+        w: "full",
+        maxW: "160px",
+        bg: "white",
+        pl: "2",
+        textStyle: "base",
+        fontWeight: "semibold",
+        outline: "0",
+      })}
+      placeholder=""
+      id=""
+    />
+    <input
+      type="button"
+      value="Search"
+      class={css({
+        bg: "blue.500",
+        p: "2",
+        roundedTopRight: "lg",
+        roundedBottomRight: "lg",
+        color: "white",
+        fontWeight: "semibold",
+        _hover: {
+          bg: "blue.800",
+        },
+        transition: "colors",
+      })}
+    />
+  </div>
+</div>

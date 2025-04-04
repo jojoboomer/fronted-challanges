@@ -1,0 +1,71 @@
+---
+import SearchForm from "@components/pages/tracker/SearchForm.astro";
+import Layout from "@layouts/Layout.astro";
+import { main, map } from "@styles/tracker";
+---
+
+<Layout title={"Ip Tracker"}>
+  <main class={main}>
+    <SearchForm />
+    <div id="map" class={map}></div>
+  </main>
+</Layout>
+
+<script>
+import { isValidIPv4 } from "@utils/parseStr";
+
+  const { PUBLIC_API_KEY } = import.meta.env;
+  const form = document.querySelector("#ip-form");
+  const action = form?.querySelector("button");
+  const ipSpan = document.querySelector("span.ip-value") as HTMLSpanElement;
+  const locationSpan = document.querySelector(
+    "span.location-value"
+  ) as HTMLSpanElement;
+  const utcSpan = document.querySelector("span.utc-value") as HTMLSpanElement;
+  const ispSpan = document.querySelector("span.isp-value") as HTMLSpanElement;
+
+  const getIp = async (ip) => {
+    let url = `https://geo.ipify.org/api/v2/country,city?apiKey=${PUBLIC_API_KEY}`;
+
+    if (ip) {
+      url += `&ipAddress=${ip}`;
+    }
+    const res = await fetch(url);
+    const data = await res.json();
+    return data;
+  };
+
+  //Inicialización del mapa
+  var map = L.map("map").setView([43.731493, 7.415073], 18);
+  //Icono del mapa
+  var icon = L.icon({
+    iconUrl: "/tracker/icon-location.svg",
+  });
+  L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 19,
+    attribution:
+      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
+  L.marker([43.73149, 7.41507], { icon: icon }).addTo(map);
+
+  // Evento al hacer click en el botón de búsqueda de IP
+  action?.addEventListener("click", async () => {
+    const ip = document.querySelector("input")?.value;
+    if (ip) {
+
+      if(!isValidIPv4(ip)){
+        alert("Invalid IP address");
+        return;
+      }
+
+      const { isp, location } = await getIp(ip);
+      ipSpan.innerText = ip;
+      locationSpan.innerText = location.city;
+      utcSpan.innerText = `UTC ${location.timezone}`;
+      ispSpan.innerText = isp;
+
+      L.marker([location.lat, location.lng], { icon: icon }).addTo(map);
+      map.flyTo([location.lat, location.lng], 12);
+    }
+  });
+</script>

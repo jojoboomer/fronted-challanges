@@ -14,6 +14,12 @@ export default defineConfig({
     dark: "[data-color-mode=dark] &",
   },
   theme: {
+    // "dark-gray": {
+    //   DEFAULT: { value: "hsl(0, 0%, 17%)" },
+    // },
+    // "ligth-gray": {
+    //   DEFAULT: { value: "hsl(0, 0%, 59%)" },
+    // },
     extend: {
       breakpoints: {
         xs: "375px",
@@ -25,13 +31,14 @@ export default defineConfig({
           Lato: { value: "var(--lato), sans-serif" },
           Poppins: { value: "var(--poppins), sans-serif" },
           Josefin: { value: "var(--josefin), sans-serif" },
+          Rubik: { value: "var(--rubik), sans-serif" },
         },
         colors: {
           primary: {
             DEFAULT: { value: "#0070f3" },
             todo: { value: "#3a7bfd" },
             singup: { value: "#ff7a7a" },
-            cart: { value: "#c73a0f" },
+            cart: { value: "#c73a0f" },           
           },
           secondary: {
             DEFAULT: { value: "#ff4081" },
@@ -60,7 +67,7 @@ export default defineConfig({
             nft: { value: "#0d192b" },
             nftCard: { value: "#14253d" },
             singup: { value: "#ff7a7a" },
-            cart: { value: "#fcf9f7" }
+            cart: { value: "#fcf9f7" },
           },
           text: {
             cart: { value: "#260f08" },
