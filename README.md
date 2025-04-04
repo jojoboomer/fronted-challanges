@@ -19,4 +19,4 @@
 - [Astro](https://astro.build/) - Framework
 - [React](https://reactjs.org/) - JS library
 - [PandaCss](https://panda-css.com/) - For styles
-- []
+- [Netlify](https://www.netlify.com/) - For hosting

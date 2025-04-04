@@ -25,8 +25,8 @@ export const pattern = css({
   position: "relative",
   margin: "0 auto",
   backgroundImage: {
-    base: 'url("tracker/pattern-bg-mobile.png")',
-    md: 'url("tracker/pattern-bg-desktop.png")',
+    base: 'url("/tracker/pattern-bg-mobile.png")',
+    md: 'url("/tracker/pattern-bg-desktop.png")',
   },
   backgroundPosition: "center",
   backgroundSize: "cover",
